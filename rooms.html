@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rooms & Accommodations - Demo Homestay</title>
-    <meta name="description" content="Discover our comfortable and cozy rooms at Demo Homestay. Choose from deluxe mountain view rooms to standard comfortable accommodations.">
+    <title>Rooms & Accommodations - Your Homestay</title>
+    <meta name="description" content="Discover our comfortable and cozy rooms at Your Homestay. Choose from deluxe mountain view rooms to standard comfortable accommodations.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -64,12 +64,50 @@
             color: #e1bee7;
         }
 
-        /* Hamburger Menu Icon */
-        .menu-toggle {
+        .mobile-menu-btn {
             display: none;
-            font-size: 1.8rem;
+            background: none;
+            border: none;
             color: white;
+            font-size: 1.5rem;
             cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(139, 69, 199, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .mobile-menu li {
+            margin: 1rem 0;
+        }
+
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: #e1bee7;
         }
 
         .container {
@@ -80,7 +118,8 @@
 
         /* Page Header */
         .page-header {
-            background: linear-gradient(rgba(139, 69, 199, 0.8), rgba(139, 69, 199, 0.8)), url('src/assets/homestay-hero.jpg');
+            /* background: linear-gradient(rgba(139, 69, 199, 0.8), rgba(139, 69, 199, 0.8)), url('src/assets/homestay-hero.jpg'); */
+             background:  url('src/assets/homestay-hero.jpg');
             background-size: cover;
             background-position: center;
             padding: 5rem 0;
@@ -273,25 +312,12 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 70px;
-                right: 0;
-                width: 200px;
-                background: rgba(139, 69, 199, 0.95);
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
-                border-radius: 0 0 10px 10px;
             }
 
-            .nav-links.show {
-                display: flex;
+            .mobile-menu-btn {
+                display: block;
             }
 
             .page-header h1 {
@@ -320,17 +346,23 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">Demo Homestay</a>
-
-            <!-- Hamburger icon -->
-            <div class="menu-toggle" id="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-
-            <ul class="nav-links" id="nav-links">
+            <a href="index.html" class="logo">Your Homestay</a>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="rooms.html" class="active">Rooms</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
                 <li><a href="activities.html">Activities</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -346,21 +378,288 @@
     </section>
 
     <!-- Rooms Section -->
-    <!-- (Keep your rooms section as before — unchanged for brevity) -->
+    <section class="rooms-section">
+        <div class="container">
+            <div class="rooms-grid">
+                <!-- Deluxe Mountain View Room -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="src/assets/room-deluxe.jpg" alt="Deluxe Mountain View Room">
+                    </div>
+                    <div class="room-content">
+                        <h2 class="room-title">Deluxe Mountain View Room</h2>
+                        <p class="room-description">
+                            Our premier accommodation featuring panoramic mountain views and elegant orchid-themed decor. Perfect for couples and solo travelers seeking luxury and tranquility.
+                        </p>
+                        <div class="room-features">
+                            <h4>Room Features:</h4>
+                            <div class="features-list">
+                                <div class="feature-item">
+                                    <i class="fas fa-mountain"></i>
+                                    <span>Mountain View</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-bed"></i>
+                                    <span>King Size Bed</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>Free Wi-Fi</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-tv"></i>
+                                    <span>Smart TV</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-bath"></i>
+                                    <span>Private Bathroom</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>Air Conditioning</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-coffee"></i>
+                                    <span>Tea/Coffee Maker</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-couch"></i>
+                                    <span>Sitting Area</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="room-price">₹1800 / night</div>
+                        <a href="contact.html" class="btn">Contact for Availability</a>
+                    </div>
+                </div>
+
+                <!-- Standard Comfort Room -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="src/assets/room-standard.jpg" alt="Standard Comfort Room">
+                    </div>
+                    <div class="room-content">
+                        <h2 class="room-title">Standard Comfort Room</h2>
+                        <p class="room-description">
+                            Cozy and comfortable accommodation with all essential amenities. Ideal for budget-conscious travelers who don't want to compromise on comfort and cleanliness.
+                        </p>
+                        <div class="room-features">
+                            <h4>Room Features:</h4>
+                            <div class="features-list">
+                                <div class="feature-item">
+                                    <i class="fas fa-tree"></i>
+                                    <span>Garden View</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-bed"></i>
+                                    <span>Queen Size Bed</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>Free Wi-Fi</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-tv"></i>
+                                    <span>LED TV</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-bath"></i>
+                                    <span>Private Bathroom</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-fan"></i>
+                                    <span>Ceiling Fan</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-coffee"></i>
+                                    <span>Tea/Coffee Maker</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-chair"></i>
+                                    <span>Study Desk</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="room-price">₹1500 / night</div>
+                        <a href="contact.html" class="btn">Contact for Availability</a>
+                    </div>
+                </div>
+
+                <!-- Family Suite -->
+                <div class="room-card">
+                    <div class="room-image">
+                        <img src="src/assets/room-deluxe.jpg" alt="Family Suite">
+                    </div>
+                    <div class="room-content">
+                        <h2 class="room-title">Family Suite</h2>
+                        <p class="room-description">
+                            Spacious accommodation perfect for families or groups. Features separate sleeping areas and a common living space for quality time together.
+                        </p>
+                        <div class="room-features">
+                            <h4>Room Features:</h4>
+                            <div class="features-list">
+                                <div class="feature-item">
+                                    <i class="fas fa-mountain"></i>
+                                    <span>Valley View</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-bed"></i>
+                                    <span>2 Bedrooms</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>Free Wi-Fi</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-tv"></i>
+                                    <span>Smart TV</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-bath"></i>
+                                    <span>2 Bathrooms</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-snowflake"></i>
+                                    <span>Air Conditioning</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Kitchenette</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-couch"></i>
+                                    <span>Living Area</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="room-price">₹1200 / night</div>
+                        <a href="contact.html" class="btn">Contact for Availability</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Amenities Section -->
-    <!-- (Keep your amenities section as before) -->
+    <section class="amenities">
+        <div class="container">
+            <h2 class="section-title">Shared Amenities</h2>
+            <div class="amenities-grid">
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Restaurant</h3>
+                    <p>Authentic local cuisine</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Garden</h3>
+                    <p>Beautiful orchid garden</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-parking"></i>
+                    </div>
+                    <h3>Parking</h3>
+                    <p>Free parking space</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3>24/7 Service</h3>
+                    <p>Round the clock assistance</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-washing-machine"></i>
+                    </div>
+                    <h3>Laundry</h3>
+                    <p>Laundry service available</p>
+                </div>
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <h3>Tour Guidance</h3>
+                    <p>Local tour arrangements</p>
+                </div>
+                <div class="amenity-item">
+    <div class="amenity-icon">
+        <i class="fas fa-swimmer"></i>
+    </div>
+    <h3>Swimming Pool</h3>
+    <p>Relax and refresh in our clean pool</p>
+</div>
+<div class="amenity-item">
+    <div class="amenity-icon">
+        <i class="fas fa-wifi"></i>
+    </div>
+    <h3>Free Wi-Fi</h3>
+    <p>High-speed internet access</p>
+</div>
+<div class="amenity-item">
+    <div class="amenity-icon">
+        <i class="fas fa-dumbbell"></i>
+    </div>
+    <h3>Fitness Center</h3>
+    <p>Fully equipped gym for guests</p>
+</div>
+<div class="amenity-item">
+    <div class="amenity-icon">
+        <i class="fas fa-child"></i>
+    </div>
+    <h3>Kids Play Area</h3>
+    <p>Safe and fun activities for children</p>
+</div>
+
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <!-- (Keep your footer as before) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Your Homestay</h3>
+                    <p>Your perfect mountain retreat where comfort meets nature. Experience authentic hospitality in a stunning natural setting.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="about.html">About</a></p>
+                    <p><a href="rooms.html">Rooms</a></p>
+                    <p><a href="activities.html">Activities</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Mountain View Road, Himalayan Region</p>
+                    <p><i class="fas fa-phone"></i> +91 94321 40363</p>
+                    <p><i class="fas fa-envelope"></i> info@yourhomestay.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <p><a href="#"><i class="fab fa-facebook"></i> Facebook</a></p>
+                    <p><a href="#"><i class="fab fa-instagram"></i> Instagram</a></p>
+                    <p><a href="#"><i class="fab fa-twitter"></i> Twitter</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Your Homestay. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        const toggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-
-        toggle.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-        });
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
     </script>
 </body>
 </html>

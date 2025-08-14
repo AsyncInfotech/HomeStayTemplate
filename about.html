@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Demo Homestay</title>
-    <meta name="description" content="Learn about Demo Homestay's history, our family, and our commitment to providing authentic mountain hospitality.">
+    <title>About Us - Your Homestay</title>
+    <meta name="description" content="Learn about Your Homestay's history, our family, and our commitment to providing authentic mountain hospitality.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -64,6 +64,52 @@
             color: #e1bee7;
         }
 
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(139, 69, 199, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .mobile-menu li {
+            margin: 1rem 0;
+        }
+
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: #e1bee7;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -72,7 +118,8 @@
 
         /* Page Header */
         .page-header {
-            background: linear-gradient(rgba(139, 69, 199, 0.8), rgba(139, 69, 199, 0.8)), url('src/assets/homestay-hero.jpg');
+            /* background: linear-gradient(rgba(139, 69, 199, 0.8), rgba(139, 69, 199, 0.8)), url('src/assets/homestay-hero.jpg'); */
+            background:  url('src/assets/homestay-hero.jpg');
             background-size: cover;
             background-position: center;
             padding: 5rem 0;
@@ -244,6 +291,10 @@
                 display: none;
             }
 
+            .mobile-menu-btn {
+                display: block;
+            }
+
             .page-header h1 {
                 font-size: 2rem;
             }
@@ -262,10 +313,22 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">Demo Homestay</a>
+            <a href="index.html" class="logo">Your Homestay</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html" class="active">About</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="rooms.html">Rooms</a></li>
                 <li><a href="activities.html">Activities</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -276,7 +339,7 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>About Demo Homestay</h1>
+            <h1>About Your Homestay</h1>
             <p>Discover our story, values, and the people who make your stay unforgettable</p>
         </div>
     </section>
@@ -287,12 +350,12 @@
             <div class="about-story">
                 <div class="story-text">
                     <h2>Our Story</h2>
-                    <p>Demo Homestay was born from a simple dream - to share the breathtaking beauty of our mountain homeland with travelers from around the world. What started as a small family initiative in 2010 has grown into a beloved destination for those seeking authentic experiences.</p>
-                    <p>Our homestay is named after the beautiful Demos that bloom in our gardens each spring, symbolizing strength, beauty, and harmony with nature. These values are at the heart of everything we do.</p>
+                    <p>Your Homestay was born from a simple dream - to share the breathtaking beauty of our mountain homeland with travelers from around the world. What started as a small family initiative in 2010 has grown into a beloved destination for those seeking authentic experiences.</p>
+                    <p>Our homestay is named after the beautiful blue orchids that bloom in our gardens each spring, symbolizing strength, beauty, and harmony with nature. These values are at the heart of everything we do.</p>
                     <p>Over the years, we've welcomed guests from over 50 countries, each bringing their own stories and leaving with memories that last a lifetime. We believe that travel is not just about seeing new places, but about connecting with people and cultures.</p>
                 </div>
                 <div class="story-image">
-                    <img src="src/assets/homestay-about.jpg" alt="Demo Homestay family">
+                    <img src="src/assets/homestay-about.jpg" alt="Your Homestay family">
                 </div>
             </div>
         </div>
@@ -331,6 +394,21 @@
                     <h3>Quality Experience</h3>
                     <p>From comfortable accommodations to memorable activities, we ensure every aspect of your stay exceeds expectations.</p>
                 </div>
+                <div class="value-card">
+    <div class="value-icon">
+        <i class="fas fa-smile"></i>
+    </div>
+    <h3>Guest Satisfaction</h3>
+    <p>Your happiness is our top priority, and we go the extra mile to make your stay enjoyable and memorable.</p>
+</div>
+<div class="value-card">
+    <div class="value-icon">
+        <i class="fas fa-utensils"></i>
+    </div>
+    <h3>Culinary Excellence</h3>
+    <p>We offer delicious, freshly prepared meals that showcase the best of local and seasonal ingredients.</p>
+</div>
+
             </div>
         </div>
     </section>
@@ -344,15 +422,15 @@
                     <div class="member-photo">
                         <i class="fas fa-user"></i>
                     </div>
-                    <h3 class="member-name">Raj Sharma</h3>
+                    <h3 class="member-name">Raj Roy</h3>
                     <p class="member-role">Founder & Host</p>
-                    <p>Raj founded Demo Homestay with a vision to share the beauty of mountain life. He's passionate about sustainable tourism and local culture.</p>
+                    <p>Raj founded Your Homestay with a vision to share the beauty of mountain life. He's passionate about sustainable tourism and local culture.</p>
                 </div>
                 <div class="team-member">
                     <div class="member-photo">
                         <i class="fas fa-user"></i>
                     </div>
-                    <h3 class="member-name">Priya Sharma</h3>
+                    <h3 class="member-name">Priya Roy</h3>
                     <p class="member-role">Chef & Hospitality Manager</p>
                     <p>Priya creates magical culinary experiences using traditional recipes and fresh local ingredients from our organic garden.</p>
                 </div>
@@ -360,18 +438,18 @@
                     <div class="member-photo">
                         <i class="fas fa-user"></i>
                     </div>
-                    <h3 class="member-name">Arjun Sharma</h3>
+                    <h3 class="member-name">Arjun Roy</h3>
                     <p class="member-role">Adventure Guide</p>
                     <p>Arjun leads hiking expeditions and cultural tours, sharing his deep knowledge of local history and hidden gems.</p>
                 </div>
-                <div class="team-member">
+                <!-- <div class="team-member">
                     <div class="member-photo">
                         <i class="fas fa-user"></i>
                     </div>
                     <h3 class="member-name">Maya Sharma</h3>
                     <p class="member-role">Guest Relations</p>
                     <p>Maya ensures every guest feels welcome and helps coordinate activities and experiences during your stay.</p>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -381,7 +459,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Demo Homestay</h3>
+                    <h3>Your Homestay</h3>
                     <p>Your perfect mountain retreat where comfort meets nature. Experience authentic hospitality in a stunning natural setting.</p>
                 </div>
                 <div class="footer-section">
@@ -395,8 +473,8 @@
                 <div class="footer-section">
                     <h3>Contact Info</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Mountain View Road, Himalayan Region</p>
-                    <p><i class="fas fa-phone"></i> +123 456 7890</p>
-                    <p><i class="fas fa-envelope"></i> info@demohomestay.com</p>
+                    <p><i class="fas fa-phone"></i> +91 94321 40363</p>
+                    <p><i class="fas fa-envelope"></i> info@yourhomestay.com</p>
                 </div>
                 <div class="footer-section">
                     <h3>Follow Us</h3>
@@ -406,9 +484,16 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Demo Homestay. All rights reserved.</p>
+                <p>&copy; 2024 Your Homestay. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo Homestay - Your Perfect Mountain Retreat</title>
-    <meta name="description" content="Experience tranquility at Demo Homestay. Cozy accommodations, stunning mountain views, and authentic local experiences await you.">
+    <title>Your Homestay - Your Perfect Mountain Retreat</title>
+    <meta name="description" content="Experience tranquility at Your Homestay. Cozy accommodations, stunning mountain views, and authentic local experiences await you.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -63,10 +63,57 @@
             color: #e1bee7;
         }
 
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(139, 69, 199, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .mobile-menu li {
+            margin: 1rem 0;
+        }
+
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: #e1bee7;
+        }
+
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(139, 69, 199, 0.4), rgba(139, 69, 199, 0.4)), url('src/assets/homestay-hero.jpg');
+            /* background: linear-gradient(rgba(139, 69, 199, 0.4), rgba(139, 69, 199, 0.4)), url('src/assets/homestay-hero.jpg'); */
+            background: url('src/assets/homestay-hero.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -86,6 +133,9 @@
             font-size: 1.3rem;
             margin-bottom: 2rem;
             max-width: 600px;
+            text-align: center; /* text center */
+    margin-left: auto;  /* horizontal centering for block */
+    margin-right: auto; /* horizontal centering for block */
         }
 
         .btn {
@@ -221,6 +271,10 @@
                 display: none;
             }
 
+            .mobile-menu-btn {
+                display: block;
+            }
+
             .hero-content h1 {
                 font-size: 2.5rem;
             }
@@ -235,8 +289,20 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">Demo Homestay</a>
+            <a href="index.html" class="logo">Your Homestay</a>
             <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="rooms.html">Rooms</a></li>
@@ -249,7 +315,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Welcome to Demo Homestay</h1>
+            <h1>Welcome to Your Homestay</h1>
             <p>Experience the perfect blend of comfort and nature in our cozy mountain retreat. Your home away from home awaits.</p>
             <a href="rooms.html" class="btn">Explore Our Rooms</a>
         </div>
@@ -258,7 +324,7 @@
     <!-- Features Section -->
     <section class="features">
         <div class="container">
-            <h2 class="section-title">Why Choose Demo?</h2>
+            <h2 class="section-title">Why Choose Your Homestay?</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -312,12 +378,12 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>Your Perfect Mountain Retreat</h2>
-                    <p>Demo Homestay offers a unique blend of traditional hospitality and modern comfort. Nestled in the heart of the mountains, our homestay provides an authentic experience that connects you with nature and local culture.</p>
+                    <p>Your Homestay offers a unique blend of traditional hospitality and modern comfort. Nestled in the heart of the mountains, our homestay provides an authentic experience that connects you with nature and local culture.</p>
                     <p>Our family has been welcoming guests for over a decade, sharing the beauty of our homeland and creating memories that last a lifetime. From sunrise mountain views to starlit dinners, every moment here is special.</p>
                     <a href="about.html" class="btn">Learn More About Us</a>
                 </div>
                 <div class="about-image">
-                    <img src="src/assets/homestay-about.jpg" alt="Demo Homestay interior">
+                    <img src="src/assets/homestay-about.jpg" alt="Your Homestay interior">
                 </div>
             </div>
         </div>
@@ -328,7 +394,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Demo Homestay</h3>
+                    <h3>Your Homestay</h3>
                     <p>Your perfect mountain retreat where comfort meets nature. Experience authentic hospitality in a stunning natural setting.</p>
                 </div>
                 <div class="footer-section">
@@ -342,8 +408,8 @@
                 <div class="footer-section">
                     <h3>Contact Info</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Mountain View Road, Himalayan Region</p>
-                    <p><i class="fas fa-phone"></i> +123 456 7890</p>
-                    <p><i class="fas fa-envelope"></i> info@demohomestay.com</p>
+                    <p><i class="fas fa-phone"></i> +91 94321 40363</p>
+                    <p><i class="fas fa-envelope"></i> info@yourhomestay.com</p>
                 </div>
                 <div class="footer-section">
                     <h3>Follow Us</h3>
@@ -353,9 +419,16 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Demo Homestay. All rights reserved.</p>
+                <p>&copy; 2024 Your Homestay. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

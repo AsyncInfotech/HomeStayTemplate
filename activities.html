@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activities & Experiences - Demo Homestay</title>
-    <meta name="description" content="Discover exciting activities and authentic experiences at Demo Homestay. From mountain hiking to cultural tours and local cuisine.">
+    <title>Activities & Experiences - Your Homestay</title>
+    <meta name="description" content="Discover exciting activities and authentic experiences at Your Homestay. From mountain hiking to cultural tours and local cuisine.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -64,6 +64,52 @@
             color: #e1bee7;
         }
 
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(139, 69, 199, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .mobile-menu li {
+            margin: 1rem 0;
+        }
+
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: #e1bee7;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -72,7 +118,8 @@
 
         /* Page Header */
         .page-header {
-            background: linear-gradient(rgba(139, 69, 199, 0.8), rgba(139, 69, 199, 0.8)), url('src/assets/homestay-hero.jpg');
+            /* background: linear-gradient(rgba(139, 69, 199, 0.8), rgba(139, 69, 199, 0.8)), url('src/assets/homestay-hero.jpg'); */
+            background: url('src/assets/homestay-hero.jpg');
             background-size: cover;
             background-position: center;
             padding: 5rem 0;
@@ -271,6 +318,10 @@
                 display: none;
             }
 
+            .mobile-menu-btn {
+                display: block;
+            }
+
             .page-header h1 {
                 font-size: 2rem;
             }
@@ -285,12 +336,24 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">Demo Homestay</a>
+            <a href="index.html" class="logo">Your Homestay</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="rooms.html">Rooms</a></li>
                 <li><a href="activities.html" class="active">Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="activities.html">Activities</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
@@ -521,6 +584,20 @@
                     <h3>Culinary</h3>
                     <p>Learn traditional cooking and taste authentic local flavors.</p>
                 </div>
+                <div class="type-card">
+    <div class="type-icon">
+        <i class="fas fa-water"></i>
+    </div>
+    <h3>Water Activities</h3>
+    <p>Enjoy kayaking, boating, and refreshing water adventures.</p>
+</div>
+<div class="type-card">
+    <div class="type-icon">
+        <i class="fas fa-binoculars"></i>
+    </div>
+    <h3>Wildlife Safari</h3>
+    <p>Experience the thrill of spotting wildlife in their natural habitat.</p>
+</div>
             </div>
         </div>
     </section>
@@ -530,7 +607,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Demo Homestay</h3>
+                    <h3>Your Homestay</h3>
                     <p>Your perfect mountain retreat where comfort meets nature. Experience authentic hospitality in a stunning natural setting.</p>
                 </div>
                 <div class="footer-section">
@@ -544,8 +621,8 @@
                 <div class="footer-section">
                     <h3>Contact Info</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Mountain View Road, Himalayan Region</p>
-                    <p><i class="fas fa-phone"></i> +123 456 7890</p>
-                    <p><i class="fas fa-envelope"></i> info@demohomestay.com</p>
+                    <p><i class="fas fa-phone"></i> +91 94321 40363</p>
+                    <p><i class="fas fa-envelope"></i> info@yourhomestay.com</p>
                 </div>
                 <div class="footer-section">
                     <h3>Follow Us</h3>
@@ -555,9 +632,16 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Demo Homestay. All rights reserved.</p>
+                <p>&copy; 2024 Your Homestay. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
